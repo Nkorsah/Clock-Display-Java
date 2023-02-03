@@ -1,4 +1,4 @@
-package Personal;
+package ClockDisplayJava;
 import java.time.format.DateTimeFormatter;
 // formats the time into readable text
 import java.time.LocalDateTime;
@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 public class Clock {
     public static void main(String[] args) throws InterruptedException{
-        String x = TimeGrab();
+
         for (int i = 0; i<5; i++){
             System.out.println(TimeGrab());
             Thread.sleep(1000);

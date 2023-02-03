@@ -1,4 +1,4 @@
-package Personal;
+package ClockDisplayJava;
 
 public class LoopsWhile {
     public static void main(String[] args){
