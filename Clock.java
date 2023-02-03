@@ -6,14 +6,15 @@ import java.time.LocalDateTime;
 
 public class Clock {
     public static void main(String[] args) throws InterruptedException{
-        LocalDateTime local = LocalDateTime.now();
-        System.out.println(local);
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMMM dd, YYYY h:mm:s a");
-        System.out.println(dtf.format(local));
+        String x = TimeGrab();
         for (int i = 0; i<5; i++){
+            System.out.println(TimeGrab());
             Thread.sleep(1000);
-            System.out.println(dtf.format(local));
         }
-    
+    }
+    public static String TimeGrab(){
+        LocalDateTime local = LocalDateTime.now();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMMM dd, YYYY h:mm:s a");
+        return dtf.format(local);
     }
 }
