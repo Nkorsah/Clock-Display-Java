@@ -21,7 +21,7 @@ public class Page {
         panel.setBorder(BorderFactory.createEmptyBorder(300, 600, 300, 600));
         panel.add(label);
         label.setFont(new Font("Courier", Font.PLAIN, 72));
-        label.setPreferredSize(new Dimension(300,200));
+        label.setBorder(BorderFactory.createEmptyBorder(0, 20, 20, 20));
         // panel.setLayout(new GridLayout(0,1));
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,12 +30,20 @@ public class Page {
         frame.setVisible(true);
     }
 
-    public void update(){
-        label.setText("Haha lol");
+    public void update(String text){ //Updates the text in the GUI
+        label.setText(text);
     }
     public static void main(String[] args) throws InterruptedException{
-        Page myPage = new Page();
+        Page myPage = new Page(); // The object of the GUI 
         Thread.sleep(6000);
-        myPage.update();
+        int x = 1;
+        String y = "";
+        System.out.println(y);
+        for (int i = 0; i < 100; i++){
+            x++;
+            y = Integer.toString(x);
+            myPage.update(y);
+            Thread.sleep(1000);
+        }
     }
 }
