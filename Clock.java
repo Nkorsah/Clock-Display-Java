@@ -15,6 +15,8 @@ public class Clock {
     public static String TimeGrab(){
         LocalDateTime local = LocalDateTime.now();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMMM dd, YYYY h:mm:s a");
-        return dtf.format(local);
+        String output = dtf.format(local);
+        String out = output.substring(18);
+        return out;
     }
 }

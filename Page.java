@@ -39,7 +39,7 @@ public class Page {
         int x = 1;
         String y = "";
         System.out.println(y);
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++){ // Testing if I can make the text update
             x++;
             y = Integer.toString(x);
             myPage.update(y);
