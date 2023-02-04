@@ -1,5 +1,6 @@
 package ClockDisplayJava;
 
+import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -7,6 +8,7 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
+import javax.swing.*;
 
 public class Page {
         JFrame frame;
@@ -22,7 +24,8 @@ public class Page {
         panel.add(label);
         label.setFont(new Font("Courier", Font.PLAIN, 72));
         label.setBorder(BorderFactory.createEmptyBorder(0, 20, 20, 20));
-        // panel.setLayout(new GridLayout(0,1));
+        
+        // panel.setLayout(GridLayout());
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Live Clock");
