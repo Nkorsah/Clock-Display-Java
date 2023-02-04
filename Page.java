@@ -34,8 +34,8 @@ public class Page {
         label.setText("Haha lol");
     }
     public static void main(String[] args) throws InterruptedException{
-        new Page();
+        Page myPage = new Page();
         Thread.sleep(6000);
-        update();
+        myPage.update();
     }
 }
