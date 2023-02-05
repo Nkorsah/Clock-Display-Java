@@ -8,6 +8,7 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.Dimension;
 import javax.swing.BorderFactory;
+import javax.swing.border.Border;
 import javax.swing.*;
 
 public class Page {
@@ -15,22 +16,31 @@ public class Page {
         JPanel panel;
         JLabel label; //scope so that all methods see this
 
-    public Page() {
+    public Page() { // setting up and customizing the GUI
         frame = new JFrame();
         panel = new JPanel();
         label = new JLabel("4:00 AM");
 
-        panel.setBorder(BorderFactory.createEmptyBorder(300, 600, 300, 600));
+        frame.setVisible(true);
+
+        frame.setSize(600, 300);
+        frame.setLayout(new BorderLayout());
+        //panel.setBorder(BorderFactory.createEmptyBorder(300, 600, 300, 600));
         panel.add(label);
-        label.setFont(new Font("Courier", Font.PLAIN, 72));
-        label.setBorder(BorderFactory.createEmptyBorder(0, 20, 20, 20));
-        
+        //panel.remove(label.getLayoutComponent(BorderLayout.CENTER));
+        label.setFont(new Font("Courier", Font.PLAIN, 72)); // Font size and look 
+
+        //label.setBorder(BorderFactory.createEmptyBorder(0, 20, 20, 20));
+        //label.getSize(label.getPreferredSize());
+
+        //label.setHorizontalAlignment(JLabel.CENTER);
+        //System.out.println(label.getVerticalAlignment());
         // panel.setLayout(GridLayout());
-        frame.add(panel, BorderLayout.CENTER);
+
+        frame.add(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Live Clock");
-        frame.pack();
-        frame.setVisible(true);
+        //frame.pack();
     }
 
     public void update(String text){ //Updates the text in the GUI
