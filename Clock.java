@@ -10,6 +10,7 @@ public class Clock {
             System.out.println(TimeGrab());
             Thread.sleep(8);
         }
+        System.out.println(DateGrab());
     }
     public static String TimeGrab(){
         LocalDateTime local = LocalDateTime.now();
@@ -17,5 +18,11 @@ public class Clock {
         String output = dtf.format(local);
         String out = output.substring(18);
         return out;
+    }
+    public static String DateGrab(){
+        LocalDateTime local = LocalDateTime.now();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMMM dd, YYYY");
+        String output = dtf.format(local);
+        return output;
     }
 }

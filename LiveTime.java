@@ -9,7 +9,9 @@ public class LiveTime {
     Clock clock = new Clock();
     while (true){
         String x = Clock.TimeGrab();
-        myPage.update(x);
+        myPage.timeupdate(x);
+        String date = Clock.DateGrab();
+        myPage.dateupdate(date);
         Thread.sleep(8);
     }
 
