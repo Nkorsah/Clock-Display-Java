@@ -32,7 +32,7 @@ public class Page {
         cpanel = new JPanel();
         label = new JLabel("4:00 AM");
         title = new JLabel("Live Time");
-        date = new JLabel("Sunday");
+        date = new JLabel("\"Date Goes Here\"");
         dlabel = new JLabel();
         BoxLayout boxLayout = new BoxLayout(cpanel, BoxLayout.Y_AXIS);
 
@@ -86,7 +86,7 @@ public class Page {
 
         frame.add(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Live Clock");
+        frame.setTitle("Live Time");
         frame.pack();
     }
 
