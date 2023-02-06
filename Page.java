@@ -23,19 +23,25 @@ public class Page {
         JLabel label;
         JLabel date; //scope so that all methods see this
         JLabel dlabel;
+        JLabel dtext;
 
     public Page() { // setting up and customizing the GUI
+        //("<td title=\"" + t.getValue("block_type_desc") + "\">")
+        String giraffesays = "<html><p><span style=\"font-size:144px\">TIMER</span><span style=\"font-size:22px\">%s</span></p></html>";
+        String g = " 23" ;
+        String text = String.format(giraffesays, g);
         //-----------------Objects------------------/
         frame = new JFrame();
         panel = new JPanel();
         p2 = new JPanel();
         cpanel = new JPanel();
-        label = new JLabel("4:00 AM");
+        label = new JLabel(text);
         title = new JLabel("Live Time");
         date = new JLabel("\"Date Goes Here\"");
         dlabel = new JLabel();
-        BoxLayout boxLayout = new BoxLayout(cpanel, BoxLayout.Y_AXIS);
+        dtext = new JLabel("ok");
 
+        BoxLayout boxLayout = new BoxLayout(cpanel, BoxLayout.Y_AXIS);
 
         //--------------------Frame Settings------------------/
         frame.setVisible(true);
@@ -49,8 +55,8 @@ public class Page {
         panel.setPreferredSize(new Dimension(1200, 500));
 
         //-----------------Text for Time----------------------//
-        label.setFont(new Font("Courier", Font.PLAIN, 72)); // Font size and look 
-        label.setBackground(Color.GREEN);
+        label.setFont(new Font("Courier", Font.PLAIN, 144)); // Font size and look 
+        //label.setBackground(Color.GREEN);
         label.setOpaque(true);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setHorizontalAlignment(JLabel.CENTER);
@@ -68,6 +74,8 @@ public class Page {
         date.setPreferredSize(new Dimension(200, 100));
 
         dlabel.setPreferredSize(new Dimension(200, 0));
+
+        dtext.setFont(new Font("Courier", Font.PLAIN, 24));
 
         cpanel.setLayout(boxLayout);
         cpanel.add(date);
@@ -115,7 +123,7 @@ public class Page {
         for (int i = 0; i < 100; i++){ // Testing if I can make the text update
             x++;
             y = Integer.toString(x);
-            myPage.timeupdate(y);
+            myPage.timeupdate(y + myPage.dtext.getName());
             Thread.sleep(1000);
         }
     }
