@@ -27,9 +27,10 @@ public class Page {
 
     public Page() { // setting up and customizing the GUI
         //("<td title=\"" + t.getValue("block_type_desc") + "\">")
-        String giraffesays = "<html><p><span style=\"font-size:144px\">TIMER</span><span style=\"font-size:22px\">%s</span></p></html>";
+        String giraffesays = "<html><p><span style=\"font-size:144px\">%s</span><span style=\"font-size:22px\">%s</span></p></html>";
         String g = " 23" ;
-        String text = String.format(giraffesays, g);
+        String tim = "Time"; 
+        String text = String.format(giraffesays, tim, g);
         //-----------------Objects------------------/
         frame = new JFrame();
         panel = new JPanel();
@@ -73,14 +74,14 @@ public class Page {
         date.setHorizontalAlignment(JLabel.CENTER);
         date.setPreferredSize(new Dimension(200, 100));
 
-        dlabel.setPreferredSize(new Dimension(200, 0));
+       // dlabel.setPreferredSize(new Dimension(200, 0));
 
         dtext.setFont(new Font("Courier", Font.PLAIN, 24));
 
         cpanel.setLayout(boxLayout);
-        cpanel.add(date);
-        //cpanel.add(dlabel, BoxLayout.CENTER);
         cpanel.add(label);
+        //cpanel.add(Box.createVerticalGlue());
+        cpanel.add(date);
         date.setAlignmentX(Component.CENTER_ALIGNMENT);
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
 
@@ -106,8 +107,13 @@ public class Page {
         page.setPreferredSize(new Dimension(200, 200));
     }
 
-    public void timeupdate(String text){ //Updates the text in the GUI
-        label.setText(text);
+    public void timeupdate(String time){ //Updates the text in the GUI
+        String milli = time.substring(8,11);
+        String restoftime = time.substring(0, 8);
+        String timeofDay = time.substring(12, 14); // AM or PM
+        String timefontsize = "<html><p><span style=\"font-size:138px\">%s</span><span style=\"font-size:48px\">%s</span></p>%s</html>";
+        String ntext = String.format(timefontsize, restoftime, milli, timeofDay);
+        label.setText(ntext);
     }
 
     public void dateupdate(String text){ //Updates the text in the GUI
@@ -123,7 +129,7 @@ public class Page {
         for (int i = 0; i < 100; i++){ // Testing if I can make the text update
             x++;
             y = Integer.toString(x);
-            myPage.timeupdate(y + myPage.dtext.getName());
+            myPage.timeupdate(y + "2134567899AM777757547");
             Thread.sleep(1000);
         }
     }

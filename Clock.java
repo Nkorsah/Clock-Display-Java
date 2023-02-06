@@ -10,7 +10,9 @@ public class Clock {
             System.out.println(TimeGrab());
             Thread.sleep(8);
         }
-        System.out.println(DateGrab());
+        System.out.println(TimeGrab().substring(9,11)); // isolates miliseconds
+        System.out.println(TimeGrab().substring(0,8));
+        System.out.println(TimeGrab().substring(12,14));
     }
     public static String TimeGrab(){
         LocalDateTime local = LocalDateTime.now();
